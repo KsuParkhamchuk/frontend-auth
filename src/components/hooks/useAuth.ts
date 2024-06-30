@@ -1,7 +1,7 @@
 'use client'
 
 import axios from "axios";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react"
 
 const useAuth = () => {
@@ -15,7 +15,7 @@ const useAuth = () => {
                 setIsLoading(true)
                 const response = await axios.get('/check-auth', { withCredentials: true})
                 setIsAuthenticated(response.data.isAuthenticated)
-            } catch {
+            } catch(e) {
                 setIsAuthenticated(false)
             } finally {
                 setIsLoading(false)

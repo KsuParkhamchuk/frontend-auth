@@ -1,15 +1,20 @@
+'use client'
+
+import { useRouter } from 'next/navigation';
 import React from 'react';
-import LoginLayout from './layout';
-import Link from 'next/link';
 
-const LoginPage = () => {
+const Login = () => {
+  const router = useRouter();
 
-    return (
-        <LoginLayout>
-            <Link href='/login'>Login with Google</Link>
-            <Link href='/login'>Create account</Link>
-        </LoginLayout>
-    )
-}
+  const handleLogin = async () => {
+    router.push('http://localhost:3000/login')
+  };
 
-export default LoginPage
+  return (
+    <div>
+      <button onClick={handleLogin}>Login with Google</button>
+    </div>
+  );
+};
+
+export default Login;

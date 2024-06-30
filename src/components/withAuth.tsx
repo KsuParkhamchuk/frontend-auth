@@ -2,7 +2,7 @@
 
 import React from 'react';
 import useAuth from './hooks/useAuth';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 const withAuth = (WrappedComponent: React.ComponentType<any>) => {
   const ComponentWithAuth = (props: any) => {
@@ -21,7 +21,7 @@ const withAuth = (WrappedComponent: React.ComponentType<any>) => {
     return <WrappedComponent {...props} />;
   };
 
-  ComponentWithAuth.displayName = `WithAuth(${WrappedComponent.displayName || WrappedComponent.name || 'Component'})`;
+//   ComponentWithAuth.displayName = `WithAuth(${WrappedComponent.displayName || WrappedComponent.name || 'Component'})`;
 
   return ComponentWithAuth;
 };
