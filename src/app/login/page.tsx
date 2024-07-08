@@ -9,7 +9,7 @@ const Login = () => {
   const router = useRouter();
 
   const handleLogin = async () => {
-    router.push('http://localhost:3000/login')
+    router.push('http://localhost:3000/api/login')
   };
 
   return (
