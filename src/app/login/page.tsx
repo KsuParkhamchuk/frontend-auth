@@ -1,15 +1,13 @@
 'use client'
 
-import { useRouter } from 'next/navigation';
 import React from 'react';
 import Image from 'next/image'
 import Link from 'next/link';
 
 const Login = () => {
-  const router = useRouter();
 
-  const handleLogin = async () => {
-    router.push('http://localhost:3000/api/login')
+const handleGoogleLogin = async () => {
+    window.location.href = 'http://localhost:3000/login';
   };
 
   return (
@@ -24,7 +22,7 @@ const Login = () => {
                 <div className="bg-[url('/login_img.png')] w-36 h-36 bg-contain mr-8 rounded-full"></div>
                 <div className='flex flex-col md:min-w-60'>
                     <p className='text-white text-2xl font-bold mb-8'>Login to start the <br/><span className='text-indigo-300'>journey</span></p>
-                    <button onClick={handleLogin} className='text-gray-400 flex justify-between items-center py-3 px-6 bg-gray-900 mb-8 text-sm w-full'>
+                    <button onClick={handleGoogleLogin} className='text-gray-400 flex justify-between items-center py-3 px-6 bg-gray-900 mb-8 text-sm w-full'>
                         Another way
                         <Image
                             alt='fingerprint icon'
@@ -33,7 +31,7 @@ const Login = () => {
                             height={24}
                         />
                         </button>
-                    <button onClick={handleLogin} className='text-gray-400 flex justify-between items-center py-3 px-6 bg-gray-900 text-sm w-full'>
+                    <button onClick={handleGoogleLogin} className='text-gray-400 flex justify-between items-center py-3 px-6 bg-gray-900 text-sm w-full'>
                         Login with Google
                         <Image
                             alt='google logo icon'
