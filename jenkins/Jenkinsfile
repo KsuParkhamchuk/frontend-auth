@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh "chmod +x ./my-script.sh"
+                sh "chmod +x ./test.sh"
                 sh './jenkins/scripts/test.sh'
             }
         }
